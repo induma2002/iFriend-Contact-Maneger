@@ -107,7 +107,8 @@ public class DeletContactFrame extends JFrame implements ActionListener {
             this.setVisible(false);
 
             //System.out.println("Back To Home");
-        }else if (e.getSource() == SerchButton) {
+        }
+        else if (e.getSource() == SerchButton) {
             String search = SerchField.getText();
             boolean found = false;
 

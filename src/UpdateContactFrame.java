@@ -141,13 +141,18 @@ public class UpdateContactFrame extends JFrame implements ActionListener {
 
         }
         else if(e.getSource() == deleteContactButton){
-            Main.contact[index].name = nameField.getText();
-            Main.contact[index].phoneNumber = phoneNumberField.getText();
-            Main.contact[index].company = companyField.getText();
-            Main.contact[index].salary = Integer.parseInt(salaryField.getText());
-            Main.contact[index].birthday = birthdayField.getText();
+            try {
+                Main.contact[index].name = nameField.getText();
+                Main.contact[index].phoneNumber = phoneNumberField.getText();
+                Main.contact[index].company = companyField.getText();
+                Main.contact[index].salary = Integer.parseInt(salaryField.getText());
+                Main.contact[index].birthday = birthdayField.getText();
 
-            JOptionPane.showMessageDialog(null, "Contact Updated Successfully");
+                JOptionPane.showMessageDialog(null, "Contact Updated Successfully");
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Please enter a valid number for salary");
+
+            }
         }
 
     }
