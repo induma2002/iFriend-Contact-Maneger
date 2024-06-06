@@ -110,7 +110,14 @@ public class MyFrame extends JFrame implements ActionListener {
 
 
         } else if (e.getSource() == viewbt) {
-            Main.listOne();
+            this.setVisible(false);
+
+            ViewContactFrame viewContactFrame = new ViewContactFrame();
+            viewContactFrame.setTitle("IFriend Contact Organizer");
+            viewContactFrame.setSize(799,600);
+            viewContactFrame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+            viewContactFrame.setBackground(Color.WHITE);
+            viewContactFrame.setVisible(true);
         } else if (e.getSource() == exitbtn) {
             System.exit(0);
         }
